@@ -1,0 +1,19 @@
+definitions:        # Schema definition for the request body
+  User:
+    required:
+      - firstName
+      - lastName
+      - age
+    type: object
+    properties:
+      id:
+        type: string
+      firstName:
+        type: string
+        description: first name
+      lastName:
+        type: string
+        description: last name
+      age: 
+        type: string
+        description: age of the user

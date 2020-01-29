@@ -1,0 +1,16 @@
+definitions:        # Schema definition for the request body
+  Pet:
+    required:
+      - id
+      - name
+      - species
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        description: name of the pet
+      species:
+        type: string
+        description: spieces of the pet

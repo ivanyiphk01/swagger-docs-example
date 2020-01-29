@@ -7,14 +7,15 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "node swagger.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "swagger-jsdoc": "^3.0.3",
+    "swagger-tools": "^0.10.4",
     "swagger-ui-express": "^4.0.1"
   }
 }

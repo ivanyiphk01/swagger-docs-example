@@ -1,0 +1,13 @@
+[
+  { "id": "5e2b01536e0352d5abdb21a0",
+    "firstName": "Han",
+    "lastName": "Solo",
+    "age": 40
+  },
+  {
+    "id": "5e2b0167a759c47069c6c23d",
+    "firstName": "Leia",
+    "lastName": "Princess",
+    "age": 20
+  }
+]

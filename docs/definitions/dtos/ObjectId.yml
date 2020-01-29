@@ -1,0 +1,4 @@
+definitions:        # Schema definition for the request body
+  ObjectId:
+    type: string
+    pattern: '/^[a-f\d]{24}$/i'

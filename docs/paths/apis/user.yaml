@@ -1,0 +1,42 @@
+paths:
+  /users/{id}:
+    x-swagger-router-controller: PetController
+    get:
+      tags:
+        - User
+      summary: get a user
+      operationId: getById
+      produces:
+      - application/json
+      parameters:
+        - name: id 
+          in: path
+          description: path parameter takes the user id
+          required: true
+          type: string
+      responses:
+        200:
+          description: An object with user details
+          schema:
+            $ref: '#/definitions/User'
+  /users:
+    x-swagger-router-controller: UserController
+    get:
+      tags:
+        - User
+      summary: get a list of pets
+      operationId: getAll
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            description: Response Object
+            properties:
+              list:
+                type: array
+                description: Pets list
+                items:
+                  $ref: '#/definitions/User'
