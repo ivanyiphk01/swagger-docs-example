@@ -3,10 +3,12 @@ const cors = require('cors')
 const swaggerUi = require('swagger-ui-express');
 const swaggerConfigGenerator = require('./swagger/swaggerConfigGenerator')
 const swaggerMiddleware = require('./swagger/swaggerMiddleware')
+const helmet = require('helmet')
 
 const createApplication = async () => {
   // Create global app objects
   const app = express();
+  app.use(helmet())
   app.use(cors())
 
   // use swagger-Ui-express for your app documentation endpoint
@@ -19,7 +21,10 @@ const createApplication = async () => {
 
   app.use((err, req, res, next) => {
     if (err) {
-      res.json(err)
+      res.json({
+        message: err.message,
+        stack: err.stack
+      })
     } else {
       next()
     }

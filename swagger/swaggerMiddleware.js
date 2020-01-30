@@ -1,6 +1,8 @@
 'use strict'
 
 const initializeSwagger = require('swagger-tools').initializeMiddleware
+const responseNormalizer = require('./middlewares/responseNormalizer')
+const parseQuery = require('./middlewares/parseQuery')
 
 /**
  * @see https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md
@@ -15,9 +17,13 @@ module.exports = ({
       const middlewareList = []
       middlewareList.push(middleware.swaggerMetadata())
 
+      middlewareList.push(parseQuery)
+
       if (extraMiddlewares.length) {
         middlewareList.push(...extraMiddlewares)
       }
+
+      middlewareList.push(responseNormalizer)
 
       middlewareList.push(
         middleware.swaggerValidator({

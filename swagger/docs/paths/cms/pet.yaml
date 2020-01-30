@@ -1,0 +1,15 @@
+paths:
+  /pets:
+    x-swagger-router-controller: PetController
+    post:
+      tags:
+        - Pet
+      summary: create a new pet
+      operationId: createPet
+      produces:
+      - application/json
+      responses:
+        200:
+          description: success
+          schema: 
+            type: object

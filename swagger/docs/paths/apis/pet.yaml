@@ -1,0 +1,60 @@
+paths:
+  /pets/{id}:
+    x-swagger-router-controller: PetController
+    get:
+      tags:
+        - Pet
+      summary: It get a pet profile detail
+      operationId: getPetById
+      produces:
+      - application/json
+      parameters:
+         - $ref: '#/parameters/ObjectId'
+      responses:
+        200:
+          description: An object with pet details
+          schema:
+            type: object
+            $ref: '#/definitions/Pet'
+        404:
+          description: Not found
+  /pets:
+    x-swagger-router-controller: PetController
+    get:
+      tags:
+        - Pet
+      summary: It get a list of pets
+      operationId: getAllPets
+      produces:
+      - application/json
+      parameters:
+        - $ref: '#/parameters/Page'
+        - $ref: '#/parameters/PageSize'
+      responses:
+        200:
+          description: An object with a user updated user profile detail
+          schema: 
+            type: object
+            required:
+              - list
+              - total
+              - page
+              - pageSize
+            properties:
+              list:
+                description: list of pet object
+                type: array
+                items:
+                  $ref: '#/definitions/Pet'
+              total:
+                description: total
+                type: integer
+              page:
+                description: page
+                type: integer
+              pageSize:
+                description: pageSize
+                type: integer
+              
+        401:
+          description: Unauthorized users

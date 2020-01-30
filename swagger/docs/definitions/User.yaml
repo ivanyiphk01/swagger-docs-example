@@ -1,10 +1,11 @@
-definitions:        # Schema definition for the request body
+definitions:
   User:
+    type: object
     required:
       - firstName
       - lastName
       - age
-    type: object
+      - id
     properties:
       id:
         type: string

@@ -2,11 +2,14 @@
   { 
     "id": "5e2b016b37f7805e2efc7d59",
     "name": "Hello Kitty",
-    "species": "cat"
+    "species": "cat",
+    "isSick": "false",
+    "age": 1
   },
   { 
     "id": "5e2b0176f8de06a79951eb67",
     "name": "Snoopy",
-    "species": "dog"
+    "species": "dog",
+    "isSick": "true"
   }
 ]

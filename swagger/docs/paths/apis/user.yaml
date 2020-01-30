@@ -5,15 +5,11 @@ paths:
       tags:
         - User
       summary: get a user
-      operationId: getById
+      operationId: getUserById
       produces:
       - application/json
       parameters:
-        - name: id 
-          in: path
-          description: path parameter takes the user id
-          required: true
-          type: string
+        - $ref: '#/parameters/ObjectId'     # reference parameters
       responses:
         200:
           description: An object with user details
@@ -24,19 +20,36 @@ paths:
     get:
       tags:
         - User
-      summary: get a list of pets
-      operationId: getAll
+      summary: get a list of users
+      operationId: getAllUsers
       produces:
       - application/json
+      parameters:
+        - $ref: '#/parameters/Page'
+        - $ref: '#/parameters/PageSize'
       responses:
         "200":
           description: Success
           schema:
+            required:
+              - list
+              - total
+              - page
+              - pageSize
             type: object
             description: Response Object
             properties:
               list:
                 type: array
-                description: Pets list
+                description: Users list
                 items:
                   $ref: '#/definitions/User'
+              total:
+                type: integer
+                description: total
+              page:
+                type: integer
+                description: page
+              pageSize:
+                type: integer
+                description: pageSize

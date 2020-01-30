@@ -1,0 +1,8 @@
+parameters:
+  PageSize:
+    name: pageSize
+    in: query
+    description: pageSize
+    required: false
+    default: 10
+    type: integer

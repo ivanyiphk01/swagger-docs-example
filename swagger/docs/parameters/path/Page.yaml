@@ -1,0 +1,8 @@
+parameters:
+  Page:
+    name: page
+    in: query
+    description: page
+    required: true
+    default: 1
+    type: integer
