@@ -3,7 +3,7 @@ const R = require("ramda");
 const mung = require("express-mung");
 
 module.exports = mung.jsonAsync(async (body, req, res) => {
-  const operation = req.swagger.operation;
+  const operation = R.path(['swagger', 'operation'], req);
   const schema = R.path(['responses', '200', 'schema'], operation)
   const httpStatus = res.statusCode;
 

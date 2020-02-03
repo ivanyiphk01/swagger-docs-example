@@ -1,7 +1,7 @@
 # Install
 1. $ `yarn`
 2. $ `yarn start` or start debugger in vscode
-3. go to `localhost:4000`
+3. go to `localhost:4000/docs`
 
 ---
 
